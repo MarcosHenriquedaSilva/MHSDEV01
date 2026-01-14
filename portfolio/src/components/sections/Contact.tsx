@@ -1,28 +1,10 @@
-import React, { useState } from 'react';
-import { Send, MessageSquare } from 'lucide-react';
+import React from 'react';
+import { Send, MessageSquare, Mail } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Contact.module.css';
 
 export const Contact: React.FC = () => {
   const { t } = useLanguage();
-  const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormState({
-      ...formState,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert('Thank you! Message sent (simulation).');
-    setFormState({ name: '', email: '', message: '' });
-  };
 
   return (
     <section id="contact" className="container">
@@ -33,8 +15,24 @@ export const Contact: React.FC = () => {
               <MessageSquare size={28} color="#FFD700" fill="#FFD700" /> 
               {t.contact.title}
             </h2>
+
+            <div className={styles.emailContainer}>
+              <a href="mailto:mhs.02@hotmail.com" className={styles.emailLink}>
+                <Mail size={20} color="#FFD700" />
+                <span>mhs.02@hotmail.com</span>
+              </a>
+            </div>
             
-            <form className={styles.form} onSubmit={handleSubmit}>
+            <form 
+              className={styles.form} 
+              action="https://formsubmit.co/mhs.02@hotmail.com" 
+              method="POST"
+            >
+              {/* Configurações do FormSubmit */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value={window.location.href} />
+              <input type="hidden" name="_subject" value="Novo contato via Portfolio MHS Dev" />
+
               <div className={styles.inputGroup}>
                 <label htmlFor="name" style={{ fontWeight: 600 }}>{t.contact.form.name}</label>
                 <input 
@@ -42,8 +40,6 @@ export const Contact: React.FC = () => {
                   name="name" 
                   id="name"
                   className={styles.input} 
-                  value={formState.name}
-                  onChange={handleChange}
                   required 
                 />
               </div>
@@ -55,8 +51,6 @@ export const Contact: React.FC = () => {
                   name="email" 
                   id="email"
                   className={styles.input} 
-                  value={formState.email}
-                  onChange={handleChange}
                   required 
                 />
               </div>
@@ -67,8 +61,6 @@ export const Contact: React.FC = () => {
                   name="message" 
                   id="message"
                   className={styles.textarea} 
-                  value={formState.message}
-                  onChange={handleChange}
                   required 
                 />
               </div>
