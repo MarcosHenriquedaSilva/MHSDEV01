@@ -1,5 +1,5 @@
 import React from 'react';
-import { Send, MessageSquare, Mail } from 'lucide-react';
+import { Send, MessageSquare } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Contact.module.css';
 
