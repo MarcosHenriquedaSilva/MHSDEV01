@@ -16,13 +16,6 @@ export const Contact: React.FC = () => {
               {t.contact.title}
             </h2>
 
-            <div className={styles.emailContainer}>
-              <a href="mailto:mhs.02@hotmail.com" className={styles.emailLink}>
-                <Mail size={20} color="#FFD700" />
-                <span>mhs.02@hotmail.com</span>
-              </a>
-            </div>
-            
             <form 
               className={styles.form} 
               action="https://formsubmit.co/mhs.02@hotmail.com" 

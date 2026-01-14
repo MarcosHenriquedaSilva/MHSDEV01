@@ -35,32 +35,6 @@
   text-align: center;
 }
 
-.emailContainer {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0.5rem;
-}
-
-.emailLink {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text-primary);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  transition: all 0.2s;
-  background-color: var(--bg-secondary);
-}
-
-.emailLink:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-
 .form {
   display: flex;
   flex-direction: column;
