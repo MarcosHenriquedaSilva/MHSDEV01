@@ -1,0 +1,106 @@
+:root {
+  /* Palette - Primitives */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  
+  /* Dark Theme Palette */
+  --color-dark-bg: #121212;
+  --color-card-dark: #1E1E1E;
+  --color-text-dark-primary: #ffffff;
+  --color-text-dark-secondary: #A0A0A0;
+  
+  /* Light Theme Palette */
+  --color-light-bg: #F5F5F5;
+  --color-card-light: #FFFFFF;
+  --color-text-light-primary: #121212;
+  --color-text-light-secondary: #666666;
+
+  /* Accent Colors */
+  --color-yellow-accent: #FFD700;
+  --color-yellow-accent-hover: #E6C200;
+  
+  /* Dimensions */
+  --border-radius-xl: 40px;
+  --border-radius-lg: 12px;
+  
+  /* Semantic Defaults (Dark Mode Default) */
+  --bg-body: var(--color-dark-bg);
+  --bg-card: var(--color-card-dark);
+  --text-primary: var(--color-text-dark-primary);
+  --text-secondary: var(--color-text-dark-secondary);
+  --accent: var(--color-yellow-accent);
+  --border-color: #333;
+  --input-bg: #2A2A2A;
+}
+
+[data-theme='light'] {
+  --bg-body: var(--color-light-bg);
+  --bg-card: var(--color-card-light);
+  --text-primary: var(--color-text-light-primary);
+  --text-secondary: var(--color-text-light-secondary);
+  --border-color: #E5E5E5;
+  --input-bg: #F9F9F9;
+}
+
+[data-theme='dark'] {
+  --bg-body: var(--color-dark-bg);
+  --bg-card: var(--color-card-dark);
+  --text-primary: var(--color-text-dark-primary);
+  --text-secondary: var(--color-text-dark-secondary);
+  --border-color: #333;
+  --input-bg: #2A2A2A;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+/* Adjust for fixed header */
+main {
+  padding-top: 100px;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-body);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 5px;
+}
