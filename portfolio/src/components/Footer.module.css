@@ -1,6 +1,6 @@
 .footer {
   padding: 4rem 0 2rem;
-  background-color: var(--bg-body);
+  background-color: var(--bg-card);
   border-top: 1px solid var(--border-line);
   display: flex;
   flex-direction: column;
@@ -12,21 +12,16 @@
 .socialStrip {
   display: flex;
   gap: 2rem;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
-}
-
-.socialStrip:hover {
-  opacity: 1;
+  transition: transform 0.2s ease;
 }
 
 .socialLink {
-  color: var(--text-primary);
+  color: var(--text-secondary);
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .socialLink:hover {
-  color: var(--accent);
+  color: #00897b;
   transform: translateY(-2px);
 }
 
