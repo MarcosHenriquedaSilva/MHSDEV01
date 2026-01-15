@@ -1,30 +1,31 @@
-import { ThemeProvider } from './contexts/ThemeContext';
-import { LanguageProvider } from './contexts/LanguageContext';
-import { Header } from './components/layout/Header';
 import { Hero } from './components/sections/Hero';
-import { Services } from './components/sections/Services';
 import { About } from './components/sections/About';
 import { Projects } from './components/sections/Projects';
 import { Contact } from './components/sections/Contact';
-import { Footer } from './components/layout/Footer';
+import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
+import './App.css';
 
 function App() {
   return (
-    <LanguageProvider>
-      <ThemeProvider>
-        <div className="app">
-          <Header />
-          <main>
-            <Hero />
-            <Services />
-            <Projects />
-            <About />
-            <Contact />
-          </main>
-          <Footer />
-        </div>
-      </ThemeProvider>
-    </LanguageProvider>
+    <div className="app-container">
+      <Navbar />
+      <main>
+        <section id="hero">
+          <Hero />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
+      <Footer />
+    </div>
   );
 }
 

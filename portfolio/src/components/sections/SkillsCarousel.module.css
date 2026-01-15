@@ -1,0 +1,82 @@
+.skillsSection {
+  margin-top: 6rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.skillsTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem 0;
+  /* Mask to fade edges */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.carouselTrack {
+  display: flex;
+  width: max-content;
+  gap: 3rem;
+  animation: scroll 30s linear infinite;
+}
+
+.skillItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 80px;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.skillItem:hover {
+  color: var(--accent);
+}
+
+.skillIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  /* background-color: var(--bg-card); */
+  /* border: 1px solid var(--border-line); */
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.skillName {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Scroll half the duplicated width */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .carouselTrack {
+    gap: 2rem;
+  }
+  
+  .skillItem {
+    min-width: 60px;
+  }
+}

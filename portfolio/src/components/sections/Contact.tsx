@@ -1,72 +1,48 @@
 import React from 'react';
-import { Send, MessageSquare } from 'lucide-react';
-import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Contact.module.css';
 
 export const Contact: React.FC = () => {
-  const { t } = useLanguage();
-
   return (
-    <section id="contact" className="container">
-      <div className={styles.section}>
-        <div className={styles.container}>
-          <div className={styles.formSide}>
-            <h2 className={styles.title}>
-              <MessageSquare size={28} color="#FFD700" fill="#FFD700" /> 
-              {t.contact.title}
-            </h2>
+    <div className={styles.container}>
+      <h2 className={styles.sectionTitle}>Contato</h2>
+      
+      <div className={styles.contentWrapper}>
+        <div className={styles.formWrapper}>
+          <p className={styles.introText}>
+            Tem um projeto em mente ou quer apenas dizer oi? Sinta-se à vontade para me enviar uma mensagem.
+          </p>
+          
+          <form 
+            className={styles.form} 
+            action="https://formsubmit.co/mhs.02@hotmail.com" 
+            method="POST"
+          >
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value={window.location.href} />
+            <input type="hidden" name="_subject" value="Portfolio Contact" />
+            <input type="text" name="_honey" style={{ display: 'none' }} />
 
-            <form 
-              className={styles.form} 
-              action="https://formsubmit.co/mhs.02@hotmail.com" 
-              method="POST"
-            >
-              {/* Configurações do FormSubmit */}
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value={window.location.href} />
-              <input type="hidden" name="_subject" value="Novo contato via Portfolio MHS Dev" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="text" name="_honey" style={{ display: 'none' }} />
+            <div className={styles.inputGroup}>
+              <label htmlFor="name" className={styles.label}>Seu Nome</label>
+              <input type="text" name="name" id="name" className={styles.input} required />
+            </div>
+            
+            <div className={styles.inputGroup}>
+              <label htmlFor="email" className={styles.label}>Seu E-mail</label>
+              <input type="email" name="email" id="email" className={styles.input} required />
+            </div>
+            
+            <div className={styles.inputGroup}>
+              <label htmlFor="message" className={styles.label}>Como posso ajudar?</label>
+              <textarea name="message" id="message" className={styles.textarea} required />
+            </div>
 
-              <div className={styles.inputGroup}>
-                <label htmlFor="name" style={{ fontWeight: 600 }}>{t.contact.form.name}</label>
-                <input 
-                  type="text" 
-                  name="name" 
-                  id="name"
-                  className={styles.input} 
-                  required 
-                />
-              </div>
-              
-              <div className={styles.inputGroup}>
-                <label htmlFor="email" style={{ fontWeight: 600 }}>{t.contact.form.email}</label>
-                <input 
-                  type="email" 
-                  name="email" 
-                  id="email"
-                  className={styles.input} 
-                  required 
-                />
-              </div>
-              
-              <div className={styles.inputGroup}>
-                <label htmlFor="message" style={{ fontWeight: 600 }}>{t.contact.form.message}</label>
-                <textarea 
-                  name="message" 
-                  id="message"
-                  className={styles.textarea} 
-                  required 
-                />
-              </div>
-
-              <button type="submit" className={styles.submitButton}>
-                {t.contact.form.submit} <Send size={18} />
-              </button>
-            </form>
-          </div>
+            <button type="submit" className={styles.submitButton}>
+              Enviar Mensagem
+            </button>
+          </form>
         </div>
       </div>
-    </section>
+    </div>
   );
 };

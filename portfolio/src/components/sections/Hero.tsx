@@ -1,41 +1,33 @@
 import React from 'react';
-import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Hero.module.css';
+import heroImage from '../../assets/01.png';
 
 export const Hero: React.FC = () => {
-  const { t } = useLanguage();
-
   return (
-    <section className={styles.section}>
-      <div className="container">
-        <div className={styles.card}>
-          <div className={styles.contentWrapper}>
-            <div className={styles.textContent}>
-              <span className={styles.tagline}>{t.hero.tagline}</span>
-              <h1 className={styles.title}>
-                {t.hero.title}
-              </h1>
-              <p className={styles.description}>
-                {t.hero.description}
-              </p>
-              <div className={styles.actions}>
-                <a href="#contact" className={styles.primaryButton}>
-                  {t.hero.cta}
-                </a>
-              </div>
-            </div>
-            
-            <div className={styles.imageWrapper}>
-              <div className={styles.diamondBg}></div>
-              <img 
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=600" 
-                alt="Tech Solutions" 
-                className={styles.heroImage}
-              />
-            </div>
-          </div>
+    <div className={styles.heroContentWrapper}>
+      <div className={styles.avatarWrapper}>
+        <img 
+          src={heroImage} 
+          alt="Marcos Henrique" 
+          className={styles.heroImage} 
+        />
+      </div>
+
+      <div className={styles.textContent}>
+        <h1 className={styles.title}>
+          Desenvolvedor FullStack.
+        </h1>
+        
+        <p className={styles.description}>
+          Crio sistemas web sólidos e escaláveis com ótimas experiências de usuário.
+        </p>
+        
+        <div className={styles.ctaContainer}>
+          <a href="#projects" className={styles.ctaButton}>
+            VER MEUS PROJETOS
+          </a>
         </div>
       </div>
-    </section>
+    </div>
   );
 };

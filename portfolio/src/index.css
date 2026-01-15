@@ -1,57 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap');
+
 :root {
-  /* Palette - Primitives */
-  --color-white: #ffffff;
-  --color-black: #000000;
+  --bg-body: #f5f5f5;
+  --bg-card: #ffffff;
   
-  /* Dark Theme Palette */
-  --color-dark-bg: #121212;
-  --color-card-dark: #1E1E1E;
-  --color-text-dark-primary: #ffffff;
-  --color-text-dark-secondary: #A0A0A0;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --text-muted: #999999;
   
-  /* Light Theme Palette */
-  --color-light-bg: #F5F5F5;
-  --color-card-light: #FFFFFF;
-  --color-text-light-primary: #121212;
-  --color-text-light-secondary: #666666;
-
-  /* Accent Colors */
-  --color-yellow-accent: #FFD700;
-  --color-yellow-accent-hover: #E6C200;
+  --accent: #ff4b4b;
+  --accent-blue: #1e90ff;
+  --link-color: #111111;
+  --link-hover: #000000;
   
-  /* Dimensions */
-  --border-radius-xl: 40px;
-  --border-radius-lg: 12px;
+  --border-line: #e0e0e0;
   
-  /* Semantic Defaults (Dark Mode Default) */
-  --bg-body: var(--color-dark-bg);
-  --bg-card: var(--color-card-dark);
-  --text-primary: var(--color-text-dark-primary);
-  --text-secondary: var(--color-text-dark-secondary);
-  --accent: var(--color-yellow-accent);
-  --border-color: #333;
-  --input-bg: #2A2A2A;
+  --max-width: 1040px;
 }
 
-[data-theme='light'] {
-  --bg-body: var(--color-light-bg);
-  --bg-card: var(--color-card-light);
-  --text-primary: var(--color-text-light-primary);
-  --text-secondary: var(--color-text-light-secondary);
-  --border-color: #E5E5E5;
-  --input-bg: #F9F9F9;
-}
-
-[data-theme='dark'] {
-  --bg-body: var(--color-dark-bg);
-  --bg-card: var(--color-card-dark);
-  --text-primary: var(--color-text-dark-primary);
-  --text-secondary: var(--color-text-dark-secondary);
-  --border-color: #333;
-  --input-bg: #2A2A2A;
-}
-
-/* Base Styles */
 html {
   scroll-behavior: smooth;
 }
@@ -63,32 +29,44 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--bg-body);
   color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  line-height: 1.6;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Adjust for fixed header */
-main {
-  padding-top: 100px;
-}
-
-button {
-  cursor: pointer;
-  font-family: inherit;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: var(--link-color);
+  transition: color 0.2s ease;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+a:hover {
+  color: var(--link-hover);
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  padding: 6rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-line); /* The "Lines" user asked for */
+}
+
+section:last-child {
+  border-bottom: none;
 }
 
 /* Scrollbar */
@@ -101,6 +79,18 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border-color);
+  background: #333;
   border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Utility for container */
+.container {
+  max-width: var(--max-width);
+  width: 100%;
+  padding: 0 2rem;
+  margin: 0 auto;
 }
