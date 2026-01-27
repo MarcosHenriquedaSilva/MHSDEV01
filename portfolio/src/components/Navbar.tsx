@@ -23,8 +23,9 @@ export const Navbar: React.FC = () => {
         <nav className={styles.nav}>
           <ul className={styles.navList}>
             <li><a href="#hero" className={styles.navLink}>Início</a></li>
-            <li><a href="#about" className={styles.navLink}>Sobre</a></li>
+            <li><a href="#services" className={styles.navLink}>Serviços</a></li>
             <li><a href="#projects" className={styles.navLink}>Projetos</a></li>
+            <li><a href="#about" className={styles.navLink}>Sobre</a></li>
             <li><a href="#contact" className={styles.navLink}>Contato</a></li>
           </ul>
         </nav>

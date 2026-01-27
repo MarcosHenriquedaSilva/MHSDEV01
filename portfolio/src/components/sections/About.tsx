@@ -1,49 +1,42 @@
 import React from 'react';
 import styles from './About.module.css';
-import { Code, Layout, Smartphone } from 'lucide-react';
+import heroImage from '../../assets/01.png';
+import { Check } from 'lucide-react';
 
 export const About: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.contentGrid}>
-        <div className={styles.bioColumn}>
+        <div className={styles.photoArea}>
+          <div className={styles.accentBlob} />
+          <img src={heroImage} alt="Marcos Henrique" className={styles.profileImage} />
+        </div>
+        
+        <div>
           <h2 className={styles.sectionTitle}>Sobre</h2>
           <div className={styles.bioText}>
             <p>
-              Sou Marcos Henrique, um <strong>Desenvolvedor Full Stack</strong> apaixonado por criar produtos digitais que ajudam pessoas.
+              Sou Marcos Henrique, um <strong>Desenvolvedor Full Stack</strong> focado em construir produtos digitais úteis e bem acabados.
             </p>
             <p>
-              Sou um desenvolvedor apaixonado por criar soluções que funcionam. Com anos de experiência, ajudo empresas e empreendedores a atingirem seus objetivos através de tecnologia de ponta. Foco em qualidade, prazo e resultados reais.
+              Trabalho com tecnologias modernas, atenção a detalhes e compromisso com prazos. Meu objetivo é transformar ideias em soluções concretas.
             </p>
             <p>
-              Com mais de 5 anos de experiência em desenvolvimento web, tenho uma base sólida em tecnologias front-end e back-end. Foco em escrever código limpo, elegante e eficiente.
+              Tenho experiência sólida em front‑end e back‑end, escrevendo código limpo e performático.
             </p>
           </div>
-        </div>
-
-        <div className={styles.skillsColumn}>
-          <h3 className={styles.subTitle}>O que eu faço</h3>
-          <div className={styles.servicesList}>
-            <div className={styles.serviceItem}>
-              <Code className={styles.icon} size={28} />
-              <div>
-                <h4>Desenvolvimento Web</h4>
-                <p>Criação de sites rápidos e responsivos usando tecnologias modernas como React, Next.js e Node.js.</p>
-              </div>
+          <div className={styles.bullets}>
+            <div className={styles.bullet}>
+              <span className={styles.bulletIcon}><Check size={18} strokeWidth={2} /></span>
+              <span className={styles.bulletText}>Comunicação constante com o cliente</span>
             </div>
-            <div className={styles.serviceItem}>
-              <Layout className={styles.icon} size={28} />
-              <div>
-                <h4>UI/UX Design</h4>
-                <p>Design de interfaces intuitivas e bonitas com foco na experiência do usuário.</p>
-              </div>
+            <div className={styles.bullet}>
+              <span className={styles.bulletIcon}><Check size={18} strokeWidth={2} /></span>
+              <span className={styles.bulletText}>Criação de projetos fantásticos</span>
             </div>
-            <div className={styles.serviceItem}>
-              <Smartphone className={styles.icon} size={28} />
-              <div>
-                <h4>Mobile First</h4>
-                <p>Garantia de que cada projeto funcione perfeitamente em todos os dispositivos.</p>
-              </div>
+            <div className={styles.bullet}>
+              <span className={styles.bulletIcon}><Check size={18} strokeWidth={2} /></span>
+              <span className={styles.bulletText}>Serviços exclusivos</span>
             </div>
           </div>
         </div>
